@@ -11,3 +11,10 @@ D:\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1\obj\Debug\Console
 D:\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
 D:\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojAssemblyReference.cache
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Project\Coding\Visual Studio\AGV-API\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
