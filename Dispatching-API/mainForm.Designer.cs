@@ -1,6 +1,6 @@
 ﻿namespace Dispatching_API
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.modbusCom = new System.IO.Ports.SerialPort(this.components);
             this.modbusWorker = new System.ComponentModel.BackgroundWorker();
             this.btnStartService = new System.Windows.Forms.Button();
@@ -42,18 +42,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.apiWorker = new System.ComponentModel.BackgroundWorker();
+            this.timHandleCaller = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // notifyIcon1
+            // notifyIcon
             // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon1.BalloonTipText = "Dispatching API Service Started!";
-            this.notifyIcon1.BalloonTipTitle = "Infiniti 4.0";
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "Dispatching API Service";
+            this.notifyIcon.BalloonTipTitle = "Infiniti 4.0";
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "notifyIcon1";
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
             // 
             // modbusWorker
             // 
@@ -143,7 +144,12 @@
             // 
             // apiWorker
             // 
+            this.apiWorker.WorkerSupportsCancellation = true;
             this.apiWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.ApiWorker_DoWork);
+            // 
+            // timHandleCaller
+            // 
+            this.timHandleCaller.Tick += new System.EventHandler(this.TimHandleCaller_Tick);
             // 
             // Form1
             // 
@@ -158,6 +164,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AGV DISPATCHING API";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.groupBox1.ResumeLayout(false);
@@ -169,7 +176,7 @@
 
         #endregion
 
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.IO.Ports.SerialPort modbusCom;
         private System.ComponentModel.BackgroundWorker modbusWorker;
         private System.Windows.Forms.Button btnStartService;
@@ -181,6 +188,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox listBox2;
         private System.ComponentModel.BackgroundWorker apiWorker;
+        private System.Windows.Forms.Timer timHandleCaller;
     }
 }
 
