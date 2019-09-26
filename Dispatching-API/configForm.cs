@@ -55,7 +55,10 @@ namespace Dispatching_API
             System.Configuration.ConfigurationSettings.AppSettings["autoStart"] = checkBox1.Checked ? "true" : "false";
             System.Configuration.ConfigurationSettings.AppSettings["autoMinimize"] = checkBox2.Checked ? "true" : "false";
         }
-        
+        private void saveProgram()
+        {
+            //configFormClose += ConfigurationEvent()
+        }
         private void restartProgram()
         {
             //System.Diagnostics.Process.Start(Application.ExecutablePath); // to start new instance of application

@@ -43,6 +43,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.apiWorker = new System.ComponentModel.BackgroundWorker();
             this.timHandleCaller = new System.Windows.Forms.Timer(this.components);
+            this.modbusMasterWorker = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +152,11 @@
             // 
             this.timHandleCaller.Tick += new System.EventHandler(this.TimHandleCaller_Tick);
             // 
-            // Form1
+            // modbusMasterWorker
+            // 
+            this.modbusMasterWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.ModbusMasterWorker_DoWork);
+            // 
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +166,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AGV DISPATCHING API";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -189,6 +194,7 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.ComponentModel.BackgroundWorker apiWorker;
         private System.Windows.Forms.Timer timHandleCaller;
+        private System.ComponentModel.BackgroundWorker modbusMasterWorker;
     }
 }
 

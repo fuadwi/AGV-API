@@ -14,6 +14,7 @@ using Modbus.Device;
 using System.Net;
 using System.IO;
 using System.Threading;
+using Newtonsoft.Json;
 
 namespace Dispatching_API
 {
@@ -30,10 +31,16 @@ namespace Dispatching_API
         private int oldDataRoute = 0; 
         Form configFormVar = new configForm();
         private delegate void PrintToLog(String log);
-       
+
+        [Obsolete]
         private void handleNewConfiguration(object Sender, ConfigurationEvent e)
         {
-
+            if (e.newConfiguration)
+            {
+                BtnStopService_Click(Sender, e);
+                Thread.Sleep(1000);
+                BtnStartService_Click(Sender, e);
+            }
         }
         [Obsolete]
         private void Form1_Load(object sender, EventArgs e)
@@ -312,5 +319,19 @@ namespace Dispatching_API
                 e.Cancel = true;
             }
         }
+
+        private void ModbusMasterWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            ModbusSerialMaster modbus = ModbusSerialMaster.CreateRtu(modbusCom);
+            while (true)
+            {
+                Console.WriteLine("Addr = {0}", modbus.ReadHoldingRegisters(1, 104, 1));
+                Thread.Sleep(1000);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+                  }
     }
 }
